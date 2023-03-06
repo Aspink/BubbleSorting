@@ -1,5 +1,5 @@
 public class Sorter {
-    public int[] bubbleSorting(int[] unsorted) {
+    public static int[] bubbleSorting(int[] unsorted) {
         int[] sorted = unsorted;
         int unsortedSize = sorted.length - 1;
         boolean sorting = true;
