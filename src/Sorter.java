@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class Sorter {
     public static int[] bubbleSorting(int[] unsorted) {
-        int[] sorted = unsorted;
+        int[] sorted = Arrays.copyOf(unsorted, unsorted.length);
         int unsortedSize = sorted.length - 1;
         boolean sorting = true;
         int temp;
@@ -13,8 +15,8 @@ public class Sorter {
                     sorted[i+1] = temp;
                     sorting = true;
                 }
-                unsortedSize--;
             }
+            unsortedSize--;
         }
         return sorted;
     }
