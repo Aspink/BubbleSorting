@@ -3,7 +3,6 @@ public class Main {
         int[] unsortedNumbers = new int[]{1, 2, 5, 3, 1, 7, 9, 1, 12, 83, 1, 5, 3, 2};
         printTable(unsortedNumbers);
         printTable(Sorter.bubbleSorting(unsortedNumbers));
-        printTable(unsortedNumbers);
 
     }
     public static void printTable(int[] table) {
@@ -11,6 +10,6 @@ public class Main {
         for(int number : table) {
             System.out.print(number + ", ");
         }
-        System.out.println("\b}");
+        System.out.println("\b\b}");
     }
 }
