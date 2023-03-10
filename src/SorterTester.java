@@ -42,4 +42,15 @@ public class SorterTester {
         }
         System.out.println("\b\b}");
     }
+    public static boolean isEqual (int[] table1, int[] table2) {
+        if(table1.length != table2.length) {
+            return false;
+        }
+        for(int i = 0; i<table1.length; i++) {
+            if(table1[i] != table2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
