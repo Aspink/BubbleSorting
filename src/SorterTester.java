@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SorterTester {
@@ -12,13 +13,25 @@ public class SorterTester {
         testSets.add(new int[]{1,2});
         testSets.add(new int[]{2,1});
 
-        for(int i = 0; i < testSets.size(); i++) {
-            testSorter(testSets.get(i));
+        for (int[] testSet : testSets) {
+            testSorter(testSet);
         }
-        printTable(unsortedNumbers);
-        printTable(Sorter.bubbleSorting(unsortedNumbers));
-
     }
+
+    private static void testSorter(int[] testSet) {
+        printTable(testSet);
+        int[] sorted = Sorter.bubbleSorting(testSet);
+        int[] comparisonSet = Arrays.stream(testSet)
+                .sorted()
+                .toArray();
+        printTable(sorted);
+        if(sorted.equals(comparisonSet)) {
+            System.out.println("\uD83D\uDC9A Test passed\n");
+        }  else {
+            System.out.println("\uD83D\uDC94 Test failed\n");
+        }
+    }
+
     public static void printTable(int[] table) {
         System.out.print("{");
         for(int number : table) {
