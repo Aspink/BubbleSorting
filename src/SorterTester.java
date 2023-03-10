@@ -19,13 +19,17 @@ public class SorterTester {
     }
 
     private static void testSorter(int[] testSet) {
+        System.out.print("Tablica nieposortowana: ");
         printTable(testSet);
         int[] sorted = Sorter.bubbleSorting(testSet);
         int[] comparisonSet = Arrays.stream(testSet)
                 .sorted()
                 .toArray();
+        System.out.print("Tablica posortowana:    ");
         printTable(sorted);
-        if(sorted.equals(comparisonSet)) {
+        System.out.print("Tablica porównawcza:    ");
+        printTable(comparisonSet);
+        if(isEqual(sorted, comparisonSet)) {
             System.out.println("\uD83D\uDC9A Test passed\n");
         }  else {
             System.out.println("\uD83D\uDC94 Test failed\n");
@@ -42,6 +46,7 @@ public class SorterTester {
         }
         System.out.println("\b\b}");
     }
+
     public static boolean isEqual (int[] table1, int[] table2) {
         if(table1.length != table2.length) {
             return false;
