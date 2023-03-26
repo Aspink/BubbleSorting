@@ -29,7 +29,7 @@ public class SorterTester {
         printTable(sorted);
         System.out.print("Tablica porównawcza:    ");
         printTable(comparisonSet);
-        if(isEqual(sorted, comparisonSet)) {
+        if(Arrays.equals(sorted, comparisonSet)) {
             System.out.println("\uD83D\uDC9A Test passed\n");
         }  else {
             System.out.println("\uD83D\uDC94 Test failed\n");
